@@ -26,13 +26,14 @@ export class LoginComponent {
   onSubmit() {
     let cliente: string = "admin@gmail.com";
     let password: string = "admin";
-    if(this.usuarioLogin.value.usuario === cliente || this.usuarioLogin.value.password === password){
+    if(this.usuarioLogin.value.usuario === cliente && this.usuarioLogin.value.password === password){
       console.log(this.usuarioLogin.value)
       this.router.navigate(['/cliente']);
       this.dialogRef.close();
     }else{
       this.router.navigate(['/']);
-      this.dialogRef.close();
+      alert("Usuario o contraseña invalido");
+      
     }
   }
 
